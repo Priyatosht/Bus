@@ -1,0 +1,25 @@
+
+server:
+  port: 9494
+ 
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: Users
+        uri: http://localhost:9091/
+        predicates:
+        - Path=/users/**
+      - id: Bus
+        uri: http://localhost:9090/
+        predicates:
+        - Path=/bus/**
+      - id: Ticket
+        uri: http://localhost:9092/
+        predicates:
+        - Path=/ticket/**      globalcors:        corsConfigurations:           '[/**]':
+            allowedOrigins: "*"
+            allowedMethods: "*"
+            
+        
+  

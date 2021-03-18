@@ -1,0 +1,49 @@
+*{
+	font-family:Alike;
+}
+body{
+	background-color:rgb(245, 227, 157);
+	display:block;
+    position:absolute;
+	top:70px;
+	width:100%;
+	min-height:82%;
+	overflow-y:auto;
+}
+table{
+	background-color:rgb(245, 227, 157);
+	position:absolute;
+	padding:0 10px;
+    width:100%;
+	top:0px;
+	left:0%;
+	border:1px solid black;
+	border-collapse:collapse;
+}
+
+table tr:nth-child(even){
+	background-color:rgb(231, 209, 175)
+}
+table th{
+    background-color:brown;
+    color:white
+}
+th{
+	
+	font-weight: 600;
+	border-top:0px;
+	border-bottom:1px solid black;
+}
+
+
+td,th{
+	text-align: center;
+	padding:10px 10px;
+}
+caption{
+    caption-side:top;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
+    color: tomato;
+}

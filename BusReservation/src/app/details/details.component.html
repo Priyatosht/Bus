@@ -1,0 +1,31 @@
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Alike' rel='stylesheet'>
+</head>
+<body>
+<form  #form="ngForm" (ngSubmit)="enter(form.value)">
+    <table align="center">
+        <caption align="center">Passenger Details</caption>
+        <tr>
+          <td><label for="psgName">Passenger Name</label></td>
+          <td><input required #n="ngModel"  ngModel name="psgName" id="psgName" type="text" class="form-control"></td>
+      </tr>
+      <tr *ngIf="!n.valid && n.touched"><td></td><td>name is required</td> </tr>
+      <tr>
+        <td><label for="psgAge">Passenger Age</label></td>
+        <td><input required #age="ngModel"  ngModel name="psgAge" id="psgAge" type="number" class="form-control"></td>
+    </tr>
+    <tr *ngIf="!age.valid && age.touched"><td></td><td>age is required</td> </tr>
+    <tr>
+        <td><label for="seatNo">Seat No</label></td>
+        <td><input  required #s="ngModel" ngModel  name="seatNo" id="seatNo" type="number" class="form-control"></td>
+    </tr>
+    <tr *ngIf="!s.valid && s.touched"><td></td><td>seat no. is required</td> </tr>
+    <tr>
+      <td colspan="2" align="center"><button class="btn btn-primary" [disabled]="!form.valid">Book Ticket</button></td>
+    </tr>
+    
+        </table>
+    
+</form>
+</body>

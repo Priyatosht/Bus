@@ -1,0 +1,30 @@
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Alike' rel='stylesheet'>
+</head>
+<body>
+<form #form="ngForm" (ngSubmit)="search(form.value)">
+    <table align="center">
+        <caption align="center">Search Bus</caption>
+        <tr>
+          <td><label for="source">Source</label></td>
+          <td><input  required pattern="[a-zA-Z][a-zA-Z ]+" #src="ngModel" ngModel name="source" id="source" type="text"  class="form-control"></td>
+      </tr>
+      <tr *ngIf="!src.valid && src.touched"><td></td><td>source is invalid</td> </tr>
+      <tr>
+        <td><label for="destination">Destination</label></td>
+        <td><input required pattern="[a-zA-Z][a-zA-Z ]+"  ngModel #dest="ngModel" name="destination" id="destination" type="text" class="form-control"></td>
+    </tr>
+    <tr *ngIf="!dest.valid && dest.touched"><td></td><td>destination is invalid</td></tr>
+    <tr>
+      <td><label for="journeyDate">Journey Date</label></td>
+      <td><input ngModel required #d="ngModel" name="journeyDate" id="journeyDate" type="date" class="form-control"></td>
+  </tr>
+  <tr *ngIf="!d.valid && d.touched"><td></td><td>date is required</td>
+    <tr>
+      <td colspan="2" align="center"><button class="btn btn-primary " [disabled]="!form.valid">Search</button></td>
+    </tr>
+    </table>
+
+</form>
+</body>

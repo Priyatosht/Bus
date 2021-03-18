@@ -1,0 +1,40 @@
+<head>
+        <link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Alike' rel='stylesheet'>
+ </head>
+ <body>
+<form #form="ngForm" (ngSubmit)="register(form.value)">
+    <table align="center">
+        <caption align="center">Customer Registeration</caption>
+        <tr>
+          <td><label for="customerName">Name</label></td>
+          <td><input required #n="ngModel" ngModel name="customerName" id="customerName" type="text" class="form-control"></td>
+      </tr>
+      <tr *ngIf="!n.valid && n.touched"><td></td><td>name is required</td> </tr>
+      <tr>
+        <td><label for="emailId">Email</label></td>
+        <td><input required pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" #email="ngModel" ngModel name="emailId" id="emailId" type="email" class="form-control"></td>
+    </tr>
+    <tr *ngIf="!email.valid && email.touched"><td></td><td>given email is invalid</td> </tr>
+    <tr>
+        <td><label for="mobileNumber">Mobile Number</label></td>
+        <td><input required #m="ngModel" pattern="[0-9]{10}" ngModel name="mobileNumber" id="mobileNumber" type="text" class="form-control"></td>
+    </tr>
+    <tr *ngIf="!m.valid && m.touched"><td></td><td>mobile number is invalid</td> </tr>
+    <tr>
+        <td><label for="dateOfBirth">Date Of Birth</label></td>
+        <td><input required #d="ngModel" ngModel name="dateOfBirth" id="dateOfBirth" type="date" class="form-control"></td>
+    </tr>
+    <tr *ngIf="!d.valid && d.touched"><td></td><td>date is required</td> </tr>
+    <tr>
+        <td><label for="password">Password</label></td>
+        <td><input required #pass="ngModel" ngModel name="password" id="password" type="password" class="form-control" pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@!#$%^&*]).{8,}$"></td>
+    </tr>
+    <tr *ngIf="!pass.valid && pass.touched"><td></td><td>given password is weak</td> </tr>
+    <tr>
+      <td colspan="2" align="center"><button class="btn btn-primary" [disabled]="!form.valid">SignUp</button></td>
+    </tr>
+        </table>
+    
+</form>
+</body>

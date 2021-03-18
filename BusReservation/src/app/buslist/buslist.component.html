@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Alike' rel='stylesheet'>
+    </head>
+    <body>
+               
+              <table align="center"  >
+                <caption >Available Buses</caption>
+                <tr>
+                  <th>Bus Id</th>
+                  <th>Travel Agency</th>
+                  <th>Source</th>
+                  <th>Destination</th>
+                  <th>Book</th>
+                </tr>
+                <tr *ngFor="let bus of busList" >
+                  <td>{{bus.busId}}</td>
+                  <td>{{bus.travelAgency}}</td>
+                  <td>{{bus.source}}</td>
+                  <td>{{bus.destination}}</td>
+                  <td><button type="button" (click)=book(bus)>book</button></td>
+                </tr>
+              </table> 
+    </body>
+</html>
+
+
+
+
+

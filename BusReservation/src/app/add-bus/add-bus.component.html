@@ -1,0 +1,29 @@
+<head>
+  <link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Alike' rel='stylesheet'>
+</head>
+<body>
+<form  #form="ngForm" (ngSubmit)="register(form.value)">
+  <table align="center">
+    <caption align="center">Add Bus</caption>
+    <tr>
+      <td><label for="travelAgency">Travel Agency</label></td>
+      <td><input required #ta="ngModel"  ngModel name="travelAgency" id="travelAgency" type="text" class="form-control"></td>
+  </tr>
+  <tr *ngIf="!ta.valid && ta.touched"><td></td><td>travel agency is required</td>
+  <tr>
+    <td><label for="source">Source</label></td>
+    <td><input required pattern="[a-zA-Z][a-zA-Z ]+" #src="ngModel" ngModel name="source" id="source" type="text" class="form-control"></td>
+</tr>
+<tr *ngIf="!src.valid && src.touched"><td></td><td>source is invalid</td> </tr>
+<tr>
+  <td><label for="destination">Destination</label></td>
+  <td><input required pattern="[a-zA-Z][a-zA-Z ]+" #dest="ngModel" ngModel name="destination" id="destination" type="text" class="form-control"></td>
+</tr>
+<tr *ngIf="!dest.valid && dest.touched"><td></td><td>destination is invalid</td></tr>
+<tr>
+  <td colspan="2" align="center"><button class="btn btn-primary" [disabled]="!form.valid" >Register Bus</button></td>
+</tr>
+  </table>
+</form>
+</body>

@@ -1,0 +1,49 @@
+*{
+    font-family:Alike;
+}
+body{
+    width:80%;
+    min-height:70%;
+    position:absolute;
+    top:100px;
+    left:10%;
+    background-color:rgb(245, 227, 157);
+
+}
+input{
+    width:100%;
+    height:33px;
+    text-align:left;
+}
+td{
+    padding:5px 10px;
+}
+button{
+    float: center;
+    background-color: #2778c4;
+}
+table{
+    width:50%;
+    position:absolute;
+    top:50px;
+    left:25%;
+    border:2px solid brown;
+    padding:25px;
+    height:50%;
+    background-color:rgb(245, 227, 157);
+
+}
+caption{
+    caption-side:top;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
+    color: black;
+}
+label{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+
+

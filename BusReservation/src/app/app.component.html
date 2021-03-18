@@ -1,0 +1,63 @@
+
+<html>
+    <head>
+      <link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
+      <link href='https://fonts.googleapis.com/css?family=Alike' rel='stylesheet'>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+  <body>
+    <table class="header">
+      <tr>
+        <td class="ar"><a routerLink="">TravelFarther.com</a></td>
+        <td *ngIf="this.userService.user==false && this.userService.admin==false">
+          <!-- <td > -->
+          <div class="dropdown">
+            <button class="dropbtn">Login</button>
+            <div class="dropdown-content">
+            <a [routerLink]="['/login']" >Customer</a>
+            <a [routerLink]="['/admin']">Admin</a>
+            </div>
+          </div>
+        </td>
+        <td *ngIf="this.userService.user==true ">
+          <!-- <td > -->
+            <div class="dropdown">
+              <button class="dropbtn">Hi {{this.userService.customer.customerName}}</button>
+              <div class="dropdown-content">
+                <a [routerLink]="['/home']" >Search</a>
+                <a  (click)="view()" >Bookings</a>
+                <a [routerLink]="['/home']" (click)="logout()" >Logout</a>
+              </div>
+            </div>
+        </td>
+        <!-- <a [routerLink]="['/home']" (click)="logout()" >Logout</a> -->
+        <td *ngIf="this.userService.admin==true" >
+          <div class="dropdown">
+            <button class="dropbtn">Hi Admin</button>
+            <div class="dropdown-content">
+              <a [routerLink]="['/addBus']">Add Bus</a>
+              <a  (click)="viewBuses()">View Buses</a>
+              <a [routerLink]="['/home']" (click)="logout()" >Logout</a>
+            </div>
+          </div>
+        </td>
+        
+      </tr>
+    </table>
+<!-- <a href="#" [routerLink]="['/login']" >Login</a> &nbsp;&nbsp;&nbsp;
+<a href="#" [routerLink]="['/register']" >Register</a> &nbsp;&nbsp;&nbsp;
+<a href="#" [routerLink]="['/home']" >Home</a> &nbsp;&nbsp;&nbsp;
+<a href="#" [routerLink]="['/buslist']" >BusList</a> &nbsp;&nbsp;&nbsp;
+<a href="#" [routerLink]="['/details']" >details</a> &nbsp;&nbsp;&nbsp;
+<a href="#" [routerLink]="['/bookings']" >Bookings</a> &nbsp;&nbsp;&nbsp;
+<a href="#" [routerLink]="['/addBus']" >addBus</a> &nbsp;&nbsp;&nbsp;
+<a href="#" [routerLink]="['/admin']" >Admin</a> &nbsp;&nbsp;&nbsp; -->
+
+
+<br/>
+<br/>
+<router-outlet></router-outlet>
+
+<div class="footer">
+    <p>copyright &#169;larsentoubro</p>
+  </div>

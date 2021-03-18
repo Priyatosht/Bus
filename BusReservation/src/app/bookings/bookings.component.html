@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Alike' rel='stylesheet'>
+    </head>
+    <body>
+<table align="center">
+  <caption >Booked Tickets</caption>
+    <tr>
+      <th>Ticket Id</th>
+      <th>Travel Agency</th>
+      <th>Passenger Name</th>
+      <th>Passenger Age</th>
+      <th>Journey Date</th>
+      <th>Seat No</th>
+      <th>Cancel Ticket</th>
+
+    </tr>
+    <tr *ngFor="let ticket of bookings" >
+      <td>{{ticket.ticketId}}</td>
+      <td>{{ticket.bus.busId}}</td>
+      <td>{{ticket.passengerName}}</td>
+      <td>{{ticket.passengerAge}}</td>
+      <td>{{ticket.journeyDate}}</td>
+      <td>{{ticket.seatNo}}</td>
+      <td><button type="button" (click)=cancel(ticket.ticketId)>cancel</button></td>
+    </tr>
+  </table>
+</body>
+</html>

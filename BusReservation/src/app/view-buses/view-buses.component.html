@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Alike' rel='stylesheet'>
+    </head>
+    <body>
+               
+              <table align="center"  >
+                <caption >Registered Buses</caption>
+                <tr>
+                  <th>Bus Id</th>
+                  <th>Travel Agency</th>
+                  <th>Source</th>
+                  <th>Destination</th>
+                </tr>
+                <tr *ngFor="let bus of allBuses" >
+                  <td>{{bus.busId}}</td>
+                  <td>{{bus.travelAgency}}</td>
+                  <td>{{bus.source}}</td>
+                  <td>{{bus.destination}}</td>
+                </tr>
+              </table> 
+    </body>
+</html>
